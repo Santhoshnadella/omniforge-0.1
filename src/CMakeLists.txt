@@ -21,29 +21,31 @@ target_include_directories(omniforge_inject PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}
 # Link MinHook (Force)
 target_link_libraries(omniforge_inject PRIVATE minhook)
 
-# Link Vulkan
-find_package(Vulkan QUIET)
-if(Vulkan_FOUND)
-  target_compile_definitions(omniforge_inject PRIVATE OMNIFORGE_HAVE_VULKAN)
-  target_include_directories(omniforge_inject PRIVATE ${Vulkan_INCLUDE_DIRS})
-  target_link_libraries(omniforge_inject PRIVATE ${Vulkan_LIBRARIES})
-else()
-  # Fallback: Use downloaded headers
-  target_compile_definitions(omniforge_inject PRIVATE OMNIFORGE_HAVE_VULKAN)
-  target_include_directories(omniforge_inject PRIVATE "${CMAKE_SOURCE_DIR}/external/vulkan/include")
-endif()
+# Link Vulkan - TEMPORARILY DISABLED to get first build working
+# Will re-enable after fixing header issues
+# find_package(Vulkan QUIET)
+# if(Vulkan_FOUND)
+#   target_compile_definitions(omniforge_inject PRIVATE OMNIFORGE_HAVE_VULKAN)
+#   target_include_directories(omniforge_inject PRIVATE ${Vulkan_INCLUDE_DIRS})
+#   target_link_libraries(omniforge_inject PRIVATE ${Vulkan_LIBRARIES})
+# endif()
 
 # Link DXGI/D3D11 (Windows system libs)
 if(WIN32)
     target_link_libraries(omniforge_inject PRIVATE d3d11 dxgi)
 endif()
 
-# Link NCNN (Force)
-target_link_libraries(omniforge_inject PRIVATE ncnn)
-target_compile_definitions(omniforge_inject PRIVATE OMNIFORGE_HAVE_NCNN)
-# Force ncnn includes
-target_include_directories(omniforge_inject PRIVATE "${CMAKE_SOURCE_DIR}/external/ncnn/src")
-target_include_directories(omniforge_inject PRIVATE "${CMAKE_BINARY_DIR}/external/ncnn/src")
+# Link NCNN - TEMPORARILY DISABLED to get first build working  
+# Will re-enable after fixing include paths
+# if(TARGET ncnn)
+#     target_link_libraries(omniforge_inject PRIVATE ncnn)
+#     target_compile_definitions(omniforge_inject PRIVATE OMNIFORGE_HAVE_NCNN)
+#     target_include_directories(omniforge_inject PRIVATE 
+#         "${CMAKE_SOURCE_DIR}/external/ncnn/src"
+#         "${CMAKE_BINARY_DIR}/external/ncnn/src"
+#         "${CMAKE_SOURCE_DIR}/external/ncnn"
+#     )
+# endif()
 
 # Unconditionally add FSR include
 target_include_directories(omniforge_inject PRIVATE "${CMAKE_SOURCE_DIR}/external/FidelityFX-FSR/ffx-fsr")
