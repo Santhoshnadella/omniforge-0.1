@@ -1,0 +1,28 @@
+# Build
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/Makefile
+
+# Visual Studio
+*.vcxproj*
+*.sln
+*.suo
+
+# Qt Creator
+*.pro.user*
+
+# Qt Build
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+
+# Binaries
+*.exe
+*.dll
+*.lib
+*.pdb
+
+# Models and large assets
+/models/

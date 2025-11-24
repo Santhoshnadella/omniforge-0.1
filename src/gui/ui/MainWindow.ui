@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <widget class="QWidget" name="tabBatch">
+       <attribute name="title">
+        <string>Batch</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tabRealtime">
+       <attribute name="title">
+        <string>Real-Time</string>
+       </attribute>
+       <widget class="QPushButton" name="injectButton">
+        <property name="text">
+         <string>Inject</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+</ui>
