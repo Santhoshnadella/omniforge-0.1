@@ -21,17 +21,17 @@ target_include_directories(omniforge_inject PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}
 # Link MinHook (Force)
 target_link_libraries(omniforge_inject PRIVATE minhook)
 
-# Link Vulkan (TEMPORARILY DISABLED - headers incomplete)
-# find_package(Vulkan QUIET)
-# if(Vulkan_FOUND)
-#   target_compile_definitions(omniforge_inject PRIVATE OMNIFORGE_HAVE_VULKAN)
-#   target_include_directories(omniforge_inject PRIVATE ${Vulkan_INCLUDE_DIRS})
-#   target_link_libraries(omniforge_inject PRIVATE ${Vulkan_LIBRARIES})
-# else()
-#   # Fallback: Use downloaded headers
-#   target_compile_definitions(omniforge_inject PRIVATE OMNIFORGE_HAVE_VULKAN)
-#   target_include_directories(omniforge_inject PRIVATE "${CMAKE_SOURCE_DIR}/external/vulkan/include")
-# endif()
+# Link Vulkan
+find_package(Vulkan QUIET)
+if(Vulkan_FOUND)
+  target_compile_definitions(omniforge_inject PRIVATE OMNIFORGE_HAVE_VULKAN)
+  target_include_directories(omniforge_inject PRIVATE ${Vulkan_INCLUDE_DIRS})
+  target_link_libraries(omniforge_inject PRIVATE ${Vulkan_LIBRARIES})
+else()
+  # Fallback: Use downloaded headers
+  target_compile_definitions(omniforge_inject PRIVATE OMNIFORGE_HAVE_VULKAN)
+  target_include_directories(omniforge_inject PRIVATE "${CMAKE_SOURCE_DIR}/external/vulkan/include")
+endif()
 
 # Link DXGI/D3D11 (Windows system libs)
 if(WIN32)

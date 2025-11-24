@@ -17,9 +17,9 @@ find_package(Vulkan QUIET)
 message(STATUS "Qt6 found: ${Qt6_FOUND}")
 message(STATUS "Vulkan found: ${Vulkan_FOUND}")
 
-# External submodules (placeholders)
-option(USE_FSR3 "Enable FidelityFX FSR3 integration" OFF)
-option(USE_MINHOOK "Enable MinHook" OFF)
+# External submodules - Enable for production
+option(USE_FSR3 "Enable FidelityFX FSR3 integration" ON)
+option(USE_MINHOOK "Enable MinHook" ON)
 option(USE_NCNN "Enable ncnn-vulkan" ON)
 
 add_subdirectory(src)
