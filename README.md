@@ -1,4 +1,5 @@
-# 🎮 OmniForge - Real-Time Game Upscaling Framework ( STILL IN DEV ) PROD SOON!!!!!!!!
+# 🎮 OmniForge - Real-Time Game Upscaling Framework 
+( STILL IN DEV ) PROD SOON!!!!!!!!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/badge/platform-Windows-blue.svg)](https://www.microsoft.com/windows)
