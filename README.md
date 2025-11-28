@@ -30,6 +30,8 @@
 
 ---
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe id="js_video_iframe" src="https://jumpshare.com/embed/LRF6AJ7XAvA8GT2s5I5u" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ## 🎯 What is OmniForge?
 
 OmniForge is a **real-time game upscaling framework** that allows games to run at lower resolutions while displaying at higher resolutions with minimal quality loss. Think of it as "AI-powered performance boost for your games."
