@@ -213,8 +213,7 @@ We have automated build scripts for all phases.
 - [ ] **Phase 6**: GUI Development (Qt6)
 - [ ] **v1.0 Release**: Public Launch
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe id="js_video_iframe" src="https://jumpshare.com/embed/LRF6AJ7XAvA8GT2s5I5u" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
+"https://jumpshare.com/embed/LRF6AJ7XAvA8GT2s5I5u"
 ---
 
 ## 🤝 Contributing
